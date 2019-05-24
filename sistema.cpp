@@ -1,6 +1,6 @@
 #include <iostream>
 #include "cpu.h"
-#include "memoria"
+//#include "memoria"
 
 int main(){
 
@@ -16,7 +16,16 @@ int main(){
 			false;
 		}
 	}
-	std::cout<<"\n\n"<<quantidadeNucleos<<"\n\n";
+
+	cpu corei5(quantidadeNucleos);
+
+	std::cout<<"\n\nQuantidade de Nucleos: "<<corei5.getQuantidadeNucleos()
+			 <<"\n\nQuantidade de threads: "<<corei5.getQuantidadeThreads()
+			 <<"\nQuantidade cache L1: "<<corei5.getCacheL1()
+			 <<"\nQuantidade Cache L2: "<<corei5.getCacheL2()<<"\n\n";
+
+
+
 
 
 return 0;	

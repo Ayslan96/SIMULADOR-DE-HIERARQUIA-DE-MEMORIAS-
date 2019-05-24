@@ -6,7 +6,7 @@ class cpu{
 private:
 
 	int quantidadeNucleos;
-	int quantidadeCores;
+	int quantidadeThreads;
 	int cacheL1;
 	int cacheL2;
 
@@ -14,8 +14,10 @@ private:
 public:
 
 	cpu(int);
-
-
+	int getQuantidadeNucleos();
+	int getQuantidadeThreads();
+	int getCacheL1();
+	int getCacheL2();
 
 };
 
