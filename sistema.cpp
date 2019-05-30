@@ -1,5 +1,6 @@
 #include <iostream>
 #include "cpu.h"
+#include <vector>
 //#include "memoria"
 
 int main(){
@@ -17,16 +18,24 @@ int main(){
 		}
 	}
 
-	cpu corei5(quantidadeNucleos);
-
-	std::cout<<"\n\nQuantidade de Nucleos: "<<corei5.getQuantidadeNucleos()
-			 <<"\n\nQuantidade de threads: "<<corei5.getQuantidadeThreads()
-			 <<"\nQuantidade cache L1: "<<corei5.getCacheL1()
-			 <<"\nQuantidade Cache L2: "<<corei5.getCacheL2()<<"\n\n";
+	int qtdProcessadores = (2* quantidadeNucleos);
+	int tamCacheL1 = (2*quantidadeNucleos);
+	int tamCacheL2 = quantidadeNucleos;
 
 
+	cpu corei5(quantidadeNucleos, qtdProcessadores, 
+			   tamCacheL1, tamCacheL2);
 
+	std::cout<<"\n\nQuantidade de Nucleos: "<<corei5.getQuantidadeProcessadores()
+			 <<"\nQuantidade de threads: "<<corei5.getQuantidadeCpu()
+			 <<"\nCache L1: "<<corei5.getTamCacheL1()
+			 <<"\nCache L2: "<<corei5.getTamCacheL2()<<"\n\n";
 
+	
+	corei5.criaCacheT(tamCacheL1);
+	corei5.criaCacheL1(tamCacheL1);
+	corei5.criaCacheL2(tamCacheL2);
+	corei5.listaCache(corei5.getTamCacheL1());
 
 return 0;	
 }
