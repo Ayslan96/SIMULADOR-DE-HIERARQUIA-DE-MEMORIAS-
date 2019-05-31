@@ -1,24 +1,31 @@
 #include <iostream>
 #include "memoria.h"
-#include <vector>
+
 using namespace std;
 
-int main()
-{
 
-std::vector <int> mem;
-
-for (int i =0; i<10; i++){
-
-  mem.push_back(i);
-}
-
-mem[2]=60;
-
-for (int i =0; i<10; i++){
-
-  cout<<mem[i];
+memoria::memoria(int a) {
+	tamanhoMemoria = a;
 }
 
 
+int memoria::getTamMemoria(){
+
+}
+ 	
+void memoria::preencheMemoria(){
+ 	for (int i =0; i<10; i++){
+		mem.push_back(i);
+	}
+}
+
+int alteraDado(int posicao, int b){
+	
+
+}
+
+void listaDados(int){
+	for (int i =0; i<10; i++){
+	cout<<mem[i];
+	}
 }
