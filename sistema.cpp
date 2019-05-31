@@ -32,10 +32,8 @@ int main(){
 			 <<"\nCache L2: "<<corei5.getTamCacheL2()<<"\n\n";
 
 	
-	corei5.criaCacheT(tamCacheL1);
 	corei5.criaCacheL1(tamCacheL1);
 	corei5.criaCacheL2(tamCacheL2);
-	corei5.listaCache(corei5.getTamCacheL1());
 
 return 0;	
 }
