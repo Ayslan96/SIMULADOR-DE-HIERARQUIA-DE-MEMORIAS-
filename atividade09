@@ -1,0 +1,19 @@
+#Aluno: Ayslan Câmara
+
+#2.1a tar -cvf etc.tar /etc
+#2.1b tar -tvf etc.tar
+#2.1c tar -cvzf etc.tar.gz /etc
+#2.1d tar -cvjf etc.tar.bz2 /etc 
+#2.1e
+
+root@VM:/home/ayslan# ls -l
+total 13700
+
+-rw-r--r-- 1 root   root   8673280 jun  3 20:02  etc.tar
+-rw-r--r-- 1 root   root   1622742 jun  3 20:10  etc.tar.bz2
+-rw-r--r-- 1 root   root   1818508 jun  3 20:08  etc.tar.gz
+
+
+#2.1f tar -xvfz /home/ayslan/etc.tar.gz
+#2.1g tar -xvfj /home/ayslan/etc.tar.bz2
+

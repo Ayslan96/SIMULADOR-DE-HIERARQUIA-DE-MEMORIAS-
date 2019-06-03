@@ -7,9 +7,8 @@ class memoria{
 
 private:
 	
-	std::vector <int> mem;	
 	int tamanhoMemoria;
-
+	std::vector <int> principal;	
 
 public:
 
@@ -22,10 +21,8 @@ public:
 
 	int alteraDado(int, int);
 
-	void listaDados(int);
+	void listaDados();
 	
-	
-
 };
 
 

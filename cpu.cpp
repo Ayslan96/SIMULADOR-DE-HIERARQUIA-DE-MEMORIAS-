@@ -28,18 +28,26 @@ int cpu::getTamCacheL2(){
 }
 
 
-int cpu::criaCacheL1(int q){
+void cpu::criaCacheL1(int q){
 
 	for (int i = 0; i < q; i++){
 		cacheL1.push_back(1);
 	}
 }
 
-int cpu::criaCacheL2(int q){
+void cpu::criaCacheL2(int q){
 
 	for (int i = 0; i< q; i++){
 		cacheL2.push_back(1);
 	}
+}
+
+void cpu::alteraDadoCacheL1(int posicao, int c){
+	cacheL1[posicao] = c;
+}
+
+void cpu::alteraDadoCacheL2(int posicao, int c){
+	cacheL2[posicao] = c;
 }
 
 void cpu::listaCacheL1(int x){

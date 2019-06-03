@@ -27,8 +27,11 @@ public:
 	int getQuantidadeProcessadores();
 	int getQuantidadeCpu();
 
-	int criaCacheL1(int);
-	int criaCacheL2(int);
+	void criaCacheL1(int);
+	void criaCacheL2(int);
+
+	void alteraDadoCacheL1(int, int);
+	void alteraDadoCacheL2(int, int);
 
 	void listaCacheL1(int);
 	void listaCacheL2(int);
@@ -37,8 +40,6 @@ public:
 	void preencheCacheL2();
 
 	
-	
-
 
 };
 #endif

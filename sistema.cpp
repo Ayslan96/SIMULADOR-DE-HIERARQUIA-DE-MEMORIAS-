@@ -14,7 +14,6 @@ int main(){
 		if(quantidadeNucleos%2==0) break;
 		else {
 			std::cout<<"\nQuantidade invalida! entre apenas com Numeros pares.\n\n";
-			false;
 		}
 	}
 
