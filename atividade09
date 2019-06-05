@@ -1,10 +1,11 @@
-#Aluno: Ayslan Câmara
+#atividade09
+#aluno: ayslan silveira
 
 #2.1a tar -cvf etc.tar /etc
 #2.1b tar -tvf etc.tar
 #2.1c tar -cvzf etc.tar.gz /etc
 #2.1d tar -cvjf etc.tar.bz2 /etc 
-#2.1e
+#2.1e ls -l
 
 root@VM:/home/ayslan# ls -l
 total 13700
@@ -16,4 +17,12 @@ total 13700
 
 #2.1f tar -xvfz /home/ayslan/etc.tar.gz
 #2.1g tar -xvfj /home/ayslan/etc.tar.bz2
+
+--------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+#2.4a find / -iname "*.py"|cpio-o python-source.cpio
+#2.4b find / -atime 7|cpio weekly-backup.cpio
+
 
