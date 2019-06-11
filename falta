@@ -2,8 +2,7 @@ falta - abrir o arquivo e carregar na memoria - fazer na classe memoria.
 
 falta - definir tamanho maximo da cache L1 e L2;
 
-falta - criar funçao para substituir os dados no cache
+falta - implementar LRU https://www.geeksforgeeks.org/lru-cache-implementation/
 
 falta - implementar função da modificação e dados
 
-falta - implementar politica de substiuiçao das caches
