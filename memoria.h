@@ -19,7 +19,7 @@ public:
  	
  	void preencheMemoria();
 
-	int alteraDado(int, int);
+	void alteraDado(int, int);
 
 	void listaDados();
 	
