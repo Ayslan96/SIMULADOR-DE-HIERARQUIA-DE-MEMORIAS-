@@ -1,4 +1,16 @@
+#include <cstdlib>
+#include <iostream>
+#include <fstream>
+#include <cstring>
+#include <string>
+#include <sstream>
+#include <vector>
+
 #include "memoria.h"
+<<<<<<< HEAD
+=======
+
+>>>>>>> d0834f3e515b5a6bfbb801382c6fa07f4de87b4c
 using namespace std;
 
 memoria::memoria(int a) {
@@ -10,9 +22,18 @@ int memoria::getTamMemoria(){
 }
 
 void memoria::preencheMemoria(){
+<<<<<<< HEAD
 // cria um objeto da classe  'ifstream'
 	ifstream arquivoDeEntrada;
 	string S, aux;
+=======
+
+// cria um objeto da classe  'ifstream'
+	ifstream arquivoDeEntrada;
+//char S[100];
+	string S, aux;
+
+>>>>>>> d0834f3e515b5a6bfbb801382c6fa07f4de87b4c
 // Abre um arquivo para leitura 
 	arquivoDeEntrada.open ("arquivo.txt", ios::in);
 
