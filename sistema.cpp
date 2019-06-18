@@ -36,8 +36,8 @@ int main(){
 	ram.alteraDado(0, 555);
 	ram.listaDados();
 
-
-	while(true){
+	bool a = true;
+	while(a){
 
 		std::cout<<"\n       ESCOLHA UMA OPCAO\n";
 		std::cout<<"1. Ler dado da memoria\n";
@@ -61,6 +61,7 @@ int main(){
 				std::cout<<"listar dados\n";
 				break;
 			case 5:
+				a=false;
 				break;
 			default:
 				std::cout<<"Opção desconhecida. Tente novamente\n\n";
