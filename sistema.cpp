@@ -64,14 +64,7 @@ int main(){
 				break;
 			default:
 				std::cout<<"Opção desconhecida. Tente novamente\n\n";
-
 		}
-		
-
 	}
-	
-
-
-
 	return 0;	
 }
