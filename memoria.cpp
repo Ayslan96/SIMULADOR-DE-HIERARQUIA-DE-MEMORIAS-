@@ -1,6 +1,5 @@
 #include "memoria.h"
-
-#include <iostream>
+using namespace std;
 
 memoria::memoria(int a) {
 	tamanhoMemoria = a;
@@ -9,19 +8,43 @@ memoria::memoria(int a) {
 int memoria::getTamMemoria(){
 	return tamanhoMemoria;
 }
- 	
+
 void memoria::preencheMemoria(){
- 	for (int i =0; i<tamanhoMemoria; i++){
-		principal.push_back(i);
+// cria um objeto da classe  'ifstream'
+	ifstream arquivoDeEntrada;
+	string S, aux;
+// Abre um arquivo para leitura 
+	arquivoDeEntrada.open ("arquivo.txt", ios::in);
+
+	if (!arquivoDeEntrada)
+	{
+		cout << "Problemas na abertura do arquivo" << endl;
+		exit(1);
 	}
+
+	while(!arquivoDeEntrada.eof()){
+
+		getline(arquivoDeEntrada, S);
+
+		std::istringstream iss(S);
+		std::string token;
+
+		while (std::getline(iss, token, ','))
+		{
+			principal.push_back(stoi(token));
+		}
+	}
+	arquivoDeEntrada.close();	
 }
 
-int memoria::alteraDado(int posicao, int c){
+void memoria::alteraDado(int posicao, int c){
 	principal[posicao] = c;
 }
 
 void memoria::listaDados(){
+	cout<<"\nDADOS NA MEMORIA:\n\n";
 	for (int i =0; i<tamanhoMemoria; i++){
-	std::cout<<principal[i]<<"\t";
+		std::cout<<principal[i]<<"\t";
 	}
+	cout<<"\n\n";
 }

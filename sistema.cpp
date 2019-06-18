@@ -1,10 +1,8 @@
-#include <iostream>
 #include "cpu.h"
-#include <vector>
-//#include "memoria"
+#include "memoria.h"
 
 int main(){
-
+	int op;
 	int quantidadeNucleos;
 
 	while (true){
@@ -22,17 +20,58 @@ int main(){
 	int tamCacheL2 = quantidadeNucleos;
 
 
-	cpu corei5(quantidadeNucleos, qtdProcessadores, 
-			   tamCacheL1, tamCacheL2);
+	cpu corei5(quantidadeNucleos, qtdProcessadores, tamCacheL1, tamCacheL2);
+	memoria ram(20);
 
 	std::cout<<"\n\nQuantidade de Nucleos: "<<corei5.getQuantidadeProcessadores()
-			 <<"\nQuantidade de threads: "<<corei5.getQuantidadeCpu()
-			 <<"\nCache L1: "<<corei5.getTamCacheL1()
-			 <<"\nCache L2: "<<corei5.getTamCacheL2()<<"\n\n";
+	<<"\nQuantidade de threads: "<<corei5.getQuantidadeCpu()
+	<<"\nCache L1: "<<corei5.getTamCacheL1()
+	<<"\nCache L2: "<<corei5.getTamCacheL2()<<"\n\n";
 
-	
 	corei5.criaCacheL1(tamCacheL1);
 	corei5.criaCacheL2(tamCacheL2);
 
-return 0;	
+	std::cout<<"tamanho da memoria: " <<ram.getTamMemoria()<<"\n";
+	ram.preencheMemoria();
+	ram.alteraDado(0, 555);
+	ram.listaDados();
+
+
+	while(true){
+
+		std::cout<<"\n       ESCOLHA UMA OPCAO\n";
+		std::cout<<"1. Ler dado da memoria\n";
+		std::cout<<"2. Alterar dado na memoria principal\n";
+		std::cout<<"3. Listar os dados da memoria\n";
+		std::cout<<"4. Listar os dados das caches\n";
+		std::cout<<"5. SAIR\n";
+		std::cout<<"O que deseja fazer? ";
+		std::cin >> op;
+		switch (op){
+			case 1:
+				std::cout<<"ver dado\n";
+				break;
+			case 2:
+				std::cout<<"altera dado\n";
+				break;
+			case 3:
+				std::cout<<"listar dados\n";
+				break;
+			case 4:
+				std::cout<<"listar dados\n";
+				break;
+			case 5:
+				break;
+			default:
+				std::cout<<"Opção desconhecida. Tente novamente\n\n";
+
+		}
+		
+
+	}
+	
+
+
+
+	return 0;	
 }

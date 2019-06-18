@@ -29,14 +29,12 @@ int cpu::getTamCacheL2(){
 
 
 void cpu::criaCacheL1(int q){
-
 	for (int i = 0; i < q; i++){
 		cacheL1.push_back(1);
 	}
 }
 
 void cpu::criaCacheL2(int q){
-
 	for (int i = 0; i< q; i++){
 		cacheL2.push_back(1);
 	}
@@ -51,17 +49,13 @@ void cpu::alteraDadoCacheL2(int posicao, int c){
 }
 
 void cpu::listaCacheL1(int x){
-
 	for(int i = 0; i<x;i++){
 		std::cout<<cacheL1[i]<<"\n";
 	}
-
 }
 
 void cpu::listaCacheL2(int x){
-
 	for(int i = 0; i<x;i++){
 		std::cout<<cacheL2[i]<<"\n";
 	}
-
 }
