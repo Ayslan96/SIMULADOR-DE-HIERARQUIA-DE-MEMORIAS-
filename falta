@@ -1,5 +1,6 @@
 falta - definir tamanho maximo da cache L1 e L2;
 
+<<<<<<< HEAD
 falta - implementar politica de substiuiçao das caches
 
 falta - implementar função da modificação e dados
@@ -7,3 +8,9 @@ falta - implementar função da modificação e dados
 falta juntar tudo
 
 
+=======
+falta - implementar LRU https://www.geeksforgeeks.org/lru-cache-implementation/
+
+falta - implementar função da modificação e dados
+
+>>>>>>> 4517eac3c94f5f8595339e827172dc43712ea619
