@@ -52,8 +52,12 @@ void memoria::alteraDado(int posicao, int c){
 	principal[posicao] = c;
 }
 
+int memoria::getPosMemoria(int x){
+	return principal[x];
+}
+
 void memoria::listaDados(){
-	cout<<"\nDADOS NA MEMORIA:\n\n";
+	cout<<"\nDADOS NA MEMORIA RAM:\n\n";
 	for (int i =0; i<tamanhoMemoria; i++){
 		std::cout<<principal[i]<<"\t";
 	}

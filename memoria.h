@@ -22,6 +22,8 @@ public:
 	memoria(int);
 
 	int getTamMemoria();
+
+	int getPosMemoria(int x);
  	
  	void preencheMemoria();
 

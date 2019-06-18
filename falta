@@ -5,3 +5,32 @@ falta - implementar politica de substiuiçao das caches
 falta - implementar função da modificação e dados
 
 falta juntar tudo
+
+No simulador, o usuário informará quantos cores o sistema terá (somente quantidades
+múltiplas de 2 são permitidas).ok
+
+O sistema automaticamente cria as caches e a memória principal. ok
+
+Um arquivo, lido pelo simulador, carrega os dados na memória principal.ok
+
+O usuário informa o endereço da memória principal para leitura e o core que irá utilizar aquele dado. 
+
+O sistema automaticamente carrega o dado na cache L2 e na cache L1 do
+respectivo core. 
+
+O sistema também deve ser capaz de atualizar o dado, caso o core
+modifique esse valor, e atualizar todos os níveis da hierarquia imediatamente (write-through).
+
+Atenção:
+•
+•
+Assumir que os dados são números inteiros
+
+O sistema deverá dar opção de ler ou alterar o dado, indicando qual core fará a
+operação
+
+o Em caso de leitura: o dado será carregado nas caches (se ainda não
+estiver)
+
+o Em caso de escrita: o dado será alterado e atualizado em todos os
+níveis da hierarquia

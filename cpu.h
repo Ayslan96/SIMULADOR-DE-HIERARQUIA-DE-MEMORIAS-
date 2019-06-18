@@ -2,6 +2,7 @@
 #define _CPU_H_
 
 #include <vector>
+#include "cache.h"
 
 
 class cpu{
@@ -9,13 +10,13 @@ class cpu{
 private:
 
 	int quantidadeProcessadores;
-	int quantidadeCpu;
+	int quantidadeCores;
 
 	int tamCacheL1;
 	int tamCacheL2;
 
-	std::vector <int> cacheL1;
-	std::vector <int> cacheL2;
+	cache cacheL1[quantidadeCores];
+	cache cacheL2[quantidadeProcessadores];
 
 public:
 	cpu();
@@ -25,7 +26,7 @@ public:
  	int getTamCacheL2();
 
 	int getQuantidadeProcessadores();
-	int getQuantidadeCpu();
+	int getQuantidadeCores();
 
 	void criaCacheL1(int);
 	void criaCacheL2(int);

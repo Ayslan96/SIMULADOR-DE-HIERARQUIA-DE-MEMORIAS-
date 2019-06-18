@@ -4,7 +4,7 @@
 cpu::cpu(int a, int b, int c, int d) {
 	
 	quantidadeProcessadores = a;
-	quantidadeCpu = b;
+	quantidadeCores = b;
 	
 	tamCacheL1 = c;
 	tamCacheL2 = d;
@@ -15,8 +15,8 @@ int cpu::getQuantidadeProcessadores(){
 	return quantidadeProcessadores;
 }
 
-int cpu::getQuantidadeCpu(){
-	return quantidadeCpu;
+int cpu::getQuantidadeCores(){
+	return quantidadeCores;
 }
 
 int cpu::getTamCacheL1(){
