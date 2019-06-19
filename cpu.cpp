@@ -1,7 +1,6 @@
 #include "cpu.h"
-#include <iostream>
 
-cpu::cpu(int a, int b, int c, int d) {
+cpu::cpu(int a, int b, int c, int d, int e, int f) {
 	
 	quantidadeProcessadores = a;
 	quantidadeCores = b;
@@ -9,7 +8,10 @@ cpu::cpu(int a, int b, int c, int d) {
 	tamCacheL1 = c;
 	tamCacheL2 = d;
 
+	cacheL1[f];
+	cacheL2[e];
 }
+cpu::~cpu(){}
 
 int cpu::getQuantidadeProcessadores(){
 	return quantidadeProcessadores;
@@ -19,43 +21,41 @@ int cpu::getQuantidadeCores(){
 	return quantidadeCores;
 }
 
-int cpu::getTamCacheL1(){
+int cpu::getTamCachesL1(){
 	return tamCacheL1;
 }
 
-int cpu::getTamCacheL2(){
+int cpu::getTamCachesL2(){
 	return tamCacheL2;
 }
 
-
-void cpu::criaCacheL1(int q){
-	for (int i = 0; i < q; i++){
-		cacheL1.push_back(1);
+void cpu::criaCachesL1(int q){
+	for (int i=0;i<q;i++){
+		cacheL1[q].setTamCache(3);
 	}
 }
 
-void cpu::criaCacheL2(int q){
-	for (int i = 0; i< q; i++){
-		cacheL2.push_back(1);
+void cpu::criaCachesL2(int q){
+	for (int i=0;i<q;i++){
+		cacheL2[q].setTamCache(5);
 	}
 }
 
-void cpu::alteraDadoCacheL1(int posicao, int c){
-	cacheL1[posicao] = c;
+void cpu::atualizaCaches(int core, int valor){
+	cacheL1[core].refer(valor);
+	cacheL2[int(core/2)].refer(valor);
 }
 
-void cpu::alteraDadoCacheL2(int posicao, int c){
-	cacheL2[posicao] = c;
-}
-
-void cpu::listaCacheL1(int x){
+void cpu::listaCachesL1(int x){
 	for(int i = 0; i<x;i++){
-		std::cout<<cacheL1[i]<<"\n";
+		cacheL1[x].display();
+		std::cout<<"\n";
 	}
 }
 
-void cpu::listaCacheL2(int x){
+void cpu::listaCachesL2(int x){
 	for(int i = 0; i<x;i++){
-		std::cout<<cacheL2[i]<<"\n";
+		cacheL2[x].display();
+		std::cout<<"\n";
 	}
 }

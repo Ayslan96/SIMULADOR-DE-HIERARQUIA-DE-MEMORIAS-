@@ -22,16 +22,16 @@ int main(){
 	int tamCacheL2 = quantidadeProcessadores;
 
 
-	cpu corei5(quantidadeProcessadores, quantidadeCores, tamCacheL1, tamCacheL2);
+	cpu corei5(quantidadeProcessadores, quantidadeCores, tamCacheL1, tamCacheL2, quantidadeProcessadores, quantidadeCores);
 	memoria ram(20);
 
-	std::cout<<"\n\nQuantidade de Processadores: "<<corei5.getQuantidadeProcessadores()
-	<<"\nQuantidade de Cores: "<<corei5.getQuantidadeCores()
-	<<"\nTamanho da Cache L1: "<<corei5.getTamCacheL1()
-	<<"\nTamanho da Cache L2: "<<corei5.getTamCacheL2()<<"\n\n";
+	std::cout<<"\n\nQuantidade de Processadores e Cache L2: "<<corei5.getQuantidadeProcessadores()
+	<<"\nQuantidade de Cores:  e Cache L1"<<corei5.getQuantidadeCores()
+	<<"\nTamanho da Cache L1: "<<corei5.getTamCachesL1()
+	<<"\nTamanho da Cache L2: "<<corei5.getTamCachesL2()<<"\n\n";
 
-	corei5.criaCacheL1(tamCacheL1);
-	corei5.criaCacheL2(tamCacheL2);
+	corei5.criaCachesL1(2);
+	corei5.criaCachesL2(5);
 
 	std::cout<<"Tamanho da Memoria RAM: " <<ram.getTamMemoria()<<"\n";
 	ram.preencheMemoria();
@@ -114,11 +114,11 @@ int main(){
 			cout<<"\n\n";
 
 			cout<<"Cache L1:\n";
-			corei5.listaCacheL1(tamCacheL1);
+			corei5.listaCachesL1(tamCacheL1);
 			cout<<"\n\n";
 
 			cout<<"Cache L2:\n";
-			corei5.listaCacheL2(tamCacheL2);
+			corei5.listaCachesL2(tamCacheL2);
 			cout<<"\n\n";
 			break;
 
