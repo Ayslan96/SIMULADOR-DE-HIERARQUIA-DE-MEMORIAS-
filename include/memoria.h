@@ -1,3 +1,7 @@
+/**
+ESTE É O CABEÇALHO DA CLASSE MEMÓRIA.
+*/
+
 #ifndef _MEMORIA_H_
 #define _MEMORIA_H_
 
@@ -13,23 +17,23 @@ class memoria{
 
 private:
 	
-	int tamanhoMemoria;
-	std::vector <int> principal;	
+	int tamanhoMemoria;//Atributo referente ao tamanho da memória
+	std::vector <int> principal; //Instancia atributo do tipo vector para armazenar os valores da memória principal
 
 public:
 
-	memoria();
-	memoria(int);
+	memoria();//Construtor não parametrizado
+	memoria(int);//Construtor parametrizado
 
-	int getTamMemoria();
+	int getTamMemoria(); //Este método retorna o tamanho da memória
 
-	int getPosMemoria(int x);
+	int getPosMemoria(int x); //Este método retorna o valor armazenado em uma posição de memória x
  	
- 	void preencheMemoria();
+ 	void preencheMemoria(); //Este método Preenche a memória
 
-	void alteraDado(int, int);
+	void alteraDado(int, int); //Este método Altera uma valor dentro da memória baseado uma posição informada
 
-	void listaDados();
+	void listaDados(); //Este método lista todos os elementos da memória
 	
 };
 

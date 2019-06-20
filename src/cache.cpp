@@ -1,45 +1,48 @@
-#include "cache.h"
+/*
+ESTE É O ARQUIVO DE DEFINIÇÃO DA CLASSE CACHE
+
+A Classe Cache implementa os atributos e os métodos referentes a uma cache
+*/
+
+#include "../include/cache.h"
 
 cache::cache(int n) 
 { 
-    tamCache = n; 
+    tamCache = n; /*!< Constroi um objeto do tipo Cache, com valor inicial de tamCache = n*/
 } 
 
 void cache::setTamCache(int n){
-    tamCache = n;
+    tamCache = n; /*!< Seta o valor do atributo tamCache*/
 }
 
 int cache::getTamCache(){
-    return tamCache;
+    return tamCache; /*!< Retorna o valor do atributo tamCache*/
 }
 
-void cache::refer(int x) 
+void cache::refer(int x) /*!<Este método adiciona um dado na cache*/
 { 
-    // não presente em cache
-    if (ma.find(x) == ma.end()) 
+
+    if (ma.find(x) == ma.end()) /*!< Verifica se o dado está presente no mapa*/
     { 
-        // cache está cheia 
+
         if (int(dq.size()) == tamCache) 
         { 
-            //deleta o elemento menos usado recentemente
-            int last = dq.back(); 
-            dq.pop_back(); 
-            ma.erase(last); 
+            ///Se a Cache estiver cheia o elemento menos usado recentemente será deletado
+            int last = dq.back(); /*!<Last recebe o valor do elemento menos usado do mapa*/
+            dq.pop_back(); /*!<Deleta o elemento menos usado da lista*/
+            ma.erase(last); /*!<Deleta o elemento menos usado do mapa*/
         } 
     } 
-    // presente na cache
+    ///Caso esteja presente na cache ele atualiza o mapa e a lista
     else
         dq.erase(ma[x]); 
-  
-    // atualiza referencia 
     dq.push_front(x); 
     ma[x] = dq.begin(); 
 } 
-  
-// exibe dados cache
-void cache::display() 
+
+void cache::display() ///Este método exibe os dados contidos na lista
 { 
     for (auto it = dq.begin(); it != dq.end(); it++) 
-        cout << (*it) << " "; 
-    cout << endl; 
+        std::cout << (*it) << " "; 
+    std::cout << endl; 
 } 

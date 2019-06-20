@@ -1,25 +1,28 @@
+/**
+ESTE É O CABEÇALHO DA CLASSE CPU.
+*/
+
 #ifndef _CPU_H_
 #define _CPU_H_
-#include <array>
 #include "cache.h"
 
 class cpu{
 
 private:
 
-	int quantidadeProcessadores;
-	int quantidadeCores;
+	int quantidadeProcessadores; /*!<Atributo referente a quantidade de processadores*/
+	int quantidadeCores;/*!<Atributo referente a quantidade de cores*/
 
-	int quantidadeCacheL1;
-	int quantidadeCacheL2;
+	int quantidadeCacheL1;/*!<Atributo referente a quantidade de cache L1*/
+	int quantidadeCacheL2;/*!<Atributo referente a quantidade de cache L2*/
 
-	cache cacheL1[16]{3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3};
-	cache cacheL2[8]{5,5,5,5,5,5,5,5};
+	cache cacheL1[16]{3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3};/*!<Atributo que armazena um vetor de caches L1*/
+	cache cacheL2[8]{5,5,5,5,5,5,5,5}; /*!<Atributo que armazena um vetor de caches L2*/
 
 public:
 
-	cpu(int, int, int, int);
-	~cpu();
+	cpu(int, int, int, int); /*!<Construtor Parametrizado de CPU*/
+	~cpu(); /*!<Destrutor*/
 	
 	int getQuantidadeCachesL1();
  	int getQuantidadeCachesL2();
