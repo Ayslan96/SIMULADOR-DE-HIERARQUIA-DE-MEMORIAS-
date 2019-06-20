@@ -8,12 +8,12 @@ int main(){
 	int quantidadeProcessadores;
 
 	while (true){
-		std::cout<<"Entre com a quantidade de Processadores desejada: ";
+		std::cout<<"Entre com a quantidade de Processadores desejada (MAXIMO DE 8): ";
 		std::cin>> quantidadeProcessadores ;
 
-		if(quantidadeProcessadores%2==0) break;
+		if(quantidadeProcessadores%2==0 && quantidadeProcessadores<=8) break;
 		else {
-			std::cout<<"\nQuantidade invalida! entre apenas com Numeros pares.\n\n";
+			std::cout<<"\nQuantidade invalida! Entrada permitida apenas para Numero par <= 8.\n\n";
 		}
 	}
 
@@ -24,17 +24,22 @@ int main(){
 
 	cpu corei5(quantidadeProcessadores, quantidadeCores, quantidadeCacheL1, quantidadeCacheL2);
 	corei5.criaCachesL1(quantidadeCacheL1);
-	corei5.criaCachesL2(quantidadeCacheL1);
+	corei5.criaCachesL2(quantidadeCacheL2);
+	std::cout<<corei5.getQuantidadeCachesL1()<<"\n";
+	std::cout<<corei5.getQuantidadeCachesL2()<<"\n";
 	memoria ram(20);
 
-	std::cout<<"\n\nQuantidade de Processadores e Cache L2: "<<corei5.getQuantidadeProcessadores()
-	<<"\nQuantidade de Cores:  e Cache L1: "<<corei5.getQuantidadeCores()
-	<<"\nTamanho da Cache L1: "<<corei5.getTamCachesL1()
-	<<"\nTamanho da Cache L2: "<<corei5.getTamCachesL2()<<"\n\n";
+	std::cout<<"\n\nQuantidade de Processadores: "<<corei5.getQuantidadeProcessadores()
+	<<"\nQuantidade de Cores: "<<corei5.getQuantidadeCores()
+	<<"\nQuantidade de Cache L1: "<<corei5.getQuantidadeCachesL1()
+	<<"\nQuantidade de Cache L2: "<<corei5.getQuantidadeCachesL2()<<"\n\n";
 
 	std::cout<<"Tamanho da Memoria RAM: " <<ram.getTamMemoria()<<"\n";
 	ram.preencheMemoria();
 	ram.listaDados();
+
+	std::cout<<"\nTamanho da Cache L1: "<<corei5.getTamCachesL1()	
+			 <<"\nTamanho da Cache L2: "<<corei5.getTamCachesL2()<<"\n\n";
 
 	bool a = true;
 	while(a){
@@ -98,9 +103,9 @@ int main(){
 			cout<<"Informe o valor para insercao na posicao de memoria escolhida: ";
 			cin>>valorIns;
 			ram.alteraDado(memPos-1, valorIns);//alterar dado na memoria endereço de alterar e core
-			//corei5.atualizaCaches(coreOp,valorIns);
 			//adicionar na cache L1 Processador
 			//adicionar na cache l2 compartilhada
+			corei5.atualizaCaches(coreOp,valorIns);
 			break;
 
 			case 3:

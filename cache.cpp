@@ -9,6 +9,10 @@ void cache::setTamCache(int n){
     tamCache = n;
 }
 
+int cache::getTamCache(){
+    return tamCache;
+}
+
 void cache::refer(int x) 
 { 
     // não presente em cache
