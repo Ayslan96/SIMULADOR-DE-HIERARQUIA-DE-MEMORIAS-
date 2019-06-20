@@ -16,7 +16,7 @@ class cache
     int tamCache; //Tamanho maximo da cache
   
 public: 
-    cache(); 
+    cache(int); 
     void setTamCache(int);
     void refer(int); 
     void display(); 

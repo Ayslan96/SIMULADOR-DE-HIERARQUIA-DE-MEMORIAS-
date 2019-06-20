@@ -1,8 +1,8 @@
 #include "cache.h"
 
-cache::cache()//(int n) 
+cache::cache(int n) 
 { 
-    //tamCache = n; 
+    tamCache = n; 
 } 
 
 void cache::setTamCache(int n){

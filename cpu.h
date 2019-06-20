@@ -9,14 +9,15 @@ private:
 	int quantidadeProcessadores;
 	int quantidadeCores;
 
-	int tamCacheL1;
-	int tamCacheL2;
+	int quantidadeCacheL1;
+	int quantidadeCacheL2;
 
-	cache cacheL1[100];
-	cache cacheL2[100];
+	cache cacheL1[4]{3,3,3,3};
+	cache cacheL2[4]{3,3,3,3};
 
 public:
-	cpu(int, int, int, int, int, int);
+
+	cpu(int, int, int, int);
 	~cpu();
 	int getTamCachesL1();
  	int getTamCachesL2();

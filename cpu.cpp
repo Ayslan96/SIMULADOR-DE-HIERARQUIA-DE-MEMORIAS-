@@ -1,16 +1,14 @@
 #include "cpu.h"
 
-cpu::cpu(int a, int b, int c, int d, int e, int f) {
+cpu::cpu(int a, int b, int c, int d) {
 	
 	quantidadeProcessadores = a;
 	quantidadeCores = b;
 	
-	tamCacheL1 = c;
-	tamCacheL2 = d;
-
-	cacheL1[f];
-	cacheL2[e];
+	quantidadeCacheL1 = c;
+	quantidadeCacheL2 = d;
 }
+
 cpu::~cpu(){}
 
 int cpu::getQuantidadeProcessadores(){
@@ -22,11 +20,11 @@ int cpu::getQuantidadeCores(){
 }
 
 int cpu::getTamCachesL1(){
-	return tamCacheL1;
+	return quantidadeCacheL1;
 }
 
 int cpu::getTamCachesL2(){
-	return tamCacheL2;
+	return quantidadeCacheL2;
 }
 
 void cpu::criaCachesL1(int q){
@@ -42,8 +40,9 @@ void cpu::criaCachesL2(int q){
 }
 
 void cpu::atualizaCaches(int core, int valor){
-	cacheL1[core].refer(valor);
-	cacheL2[int(core/2)].refer(valor);
+	cacheL1[int(core-1)].refer(int(valor));
+	cacheL2[int(((core-1)/2)+0.5)].refer(int(valor));
+
 }
 
 void cpu::listaCachesL1(int x){

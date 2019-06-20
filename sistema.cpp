@@ -18,25 +18,23 @@ int main(){
 	}
 
 	int quantidadeCores = (2* quantidadeProcessadores);
-	int tamCacheL1 = (2*quantidadeProcessadores);
-	int tamCacheL2 = quantidadeProcessadores;
+	int quantidadeCacheL1 = (2*quantidadeProcessadores);
+	int quantidadeCacheL2 = quantidadeProcessadores;
 
 
-	cpu corei5(quantidadeProcessadores, quantidadeCores, tamCacheL1, tamCacheL2, quantidadeProcessadores, quantidadeCores);
+	cpu corei5(quantidadeProcessadores, quantidadeCores, quantidadeCacheL1, quantidadeCacheL2);
+	corei5.criaCachesL1(quantidadeCacheL1);
+	corei5.criaCachesL2(quantidadeCacheL1);
 	memoria ram(20);
 
 	std::cout<<"\n\nQuantidade de Processadores e Cache L2: "<<corei5.getQuantidadeProcessadores()
-	<<"\nQuantidade de Cores:  e Cache L1"<<corei5.getQuantidadeCores()
+	<<"\nQuantidade de Cores:  e Cache L1: "<<corei5.getQuantidadeCores()
 	<<"\nTamanho da Cache L1: "<<corei5.getTamCachesL1()
 	<<"\nTamanho da Cache L2: "<<corei5.getTamCachesL2()<<"\n\n";
-
-	corei5.criaCachesL1(2);
-	corei5.criaCachesL2(5);
 
 	std::cout<<"Tamanho da Memoria RAM: " <<ram.getTamMemoria()<<"\n";
 	ram.preencheMemoria();
 	ram.listaDados();
-
 
 	bool a = true;
 	while(a){
@@ -72,10 +70,8 @@ int main(){
 					std::cout<<"\nQuantidade invalida! entre apenas com um core valido.\n\n";
 				}
 			}
-			//adicionar na cache L1 Processador
-			//adicionar na cache l2 compartilhada
-
 			cout<<"\nDado da "<<memPos <<"ª" <<"posição:" << ram.getPosMemoria(memPos-1);
+			corei5.atualizaCaches(coreOp,ram.getPosMemoria(memPos-1));
 			break;
 
 			case 2:
@@ -101,9 +97,8 @@ int main(){
 			}
 			cout<<"Informe o valor para insercao na posicao de memoria escolhida: ";
 			cin>>valorIns;
-			ram.alteraDado(memPos-1, valorIns);
-
-			//alterar dado na memoria endereço de alterar e core
+			ram.alteraDado(memPos-1, valorIns);//alterar dado na memoria endereço de alterar e core
+			//corei5.atualizaCaches(coreOp,valorIns);
 			//adicionar na cache L1 Processador
 			//adicionar na cache l2 compartilhada
 			break;
@@ -114,11 +109,11 @@ int main(){
 			cout<<"\n\n";
 
 			cout<<"Cache L1:\n";
-			corei5.listaCachesL1(tamCacheL1);
+			corei5.listaCachesL1(quantidadeCacheL1);
 			cout<<"\n\n";
 
 			cout<<"Cache L2:\n";
-			corei5.listaCachesL2(tamCacheL2);
+			corei5.listaCachesL2(quantidadeCacheL2);
 			cout<<"\n\n";
 			break;
 
