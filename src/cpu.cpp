@@ -54,14 +54,14 @@ void cpu::criaCachesL2(int r){
 }
 
 void cpu::atualizaCaches(int core, int valor){
-	int arit_CoreL2 = int(((core-1)/2)+0.5); //Lógica escolha da cache L2 baseado no core
+	int arit_CoreL2 = int(((core-1)/2)+0.5); /*!<Lógica escolha da cache L2 baseado no core*/
 	cacheL1[int(core-1)].refer(int(valor));
 	cacheL2[arit_CoreL2].refer(int(valor));
 
 }
 
 void cpu::listaCachesL1(int x){
-	//Lista todas as Cache L1 do sistema
+	/*!<Lista todas as Cache L1 do sistema*/
 	for(int i = 0; i<x;i++){
 		std::cout<<"Cache do Core: "<<i+1 <<": ";
 		cacheL1[i].display();
@@ -70,7 +70,7 @@ void cpu::listaCachesL1(int x){
 }
 
 void cpu::listaCachesL2(int x){
-	//Lista todas as Cache L2 do sistema
+	/*!<Lista todas as Cache L2 do sistema*/
 	for(int i = 0; i<x;i++){
 		std::cout<<"Cache do Core: "<<i+1 <<": ";
 		cacheL2[i].display();
